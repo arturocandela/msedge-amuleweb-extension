@@ -23,7 +23,10 @@ chrome.runtime.onInstalled.addListener(() => {
     // También puedes guardarlo en `chrome.storage` o enviarlo a una pestaña activa
     //chrome.storage.local.set({ lastEd2kLink: url });
 
-    chrome.tabs.create({ url: "http://localhost:4711/default/footer.php?Submit=Download%20link&selectcat=Todo&ed2klink=" + encodeURIComponent(url) });
+    chrome.tabs.create(
+        { url: "http://localhost:4711/default/footer.php?Submit=Download%20link&selectcat=Todo&ed2klink=" + encodeURIComponent(url),
+          active : false
+         });
 
   }
 
